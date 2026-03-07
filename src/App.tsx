@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import logoShort from './assets/logo_loeram_short.png'
 import logoFavicon from './assets/logo_loeram_favicon.png'
+import { LSS_THEME_STORAGE_KEY, LSS_THEME_DARK, LSS_THEME_LIGHT } from './utils/themeStorage'
 import './App.css'
 
 const apps = [
@@ -38,19 +39,19 @@ function DiotIcon({ className }: { className?: string }) {
 function App() {
   const [dark, setDark] = useState(() => {
     if (typeof window === 'undefined') return true
-    const stored = localStorage.getItem('lss-theme')
-    if (stored) return stored === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
+    const stored = localStorage.getItem(LSS_THEME_STORAGE_KEY)
+    if (stored) return stored === LSS_THEME_DARK
+    return true // tema oscuro por defecto en este proyecto
   })
 
   useEffect(() => {
     const root = document.documentElement
     if (dark) {
       root.classList.add('dark')
-      localStorage.setItem('lss-theme', 'dark')
+      localStorage.setItem(LSS_THEME_STORAGE_KEY, LSS_THEME_DARK)
     } else {
       root.classList.remove('dark')
-      localStorage.setItem('lss-theme', 'light')
+      localStorage.setItem(LSS_THEME_STORAGE_KEY, LSS_THEME_LIGHT)
     }
   }, [dark])
 
