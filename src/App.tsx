@@ -9,7 +9,7 @@ const apps = [
     id: 'lss-diot',
     name: 'lss-diot',
     description: 'Genera archivo de carga masiva para la DIOT, en ambas versiones, 2024 y anteriores y 2025 en adelante',
-    path: '/lss-diot',
+    path: '/lss-diot/index.html',
     icon: DiotIcon,
   },
 ] as const
