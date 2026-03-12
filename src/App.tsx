@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { FileCode, FileUp } from 'lucide-react'
 import logoShort from './assets/logo_loeram_short.png'
 import logoFavicon from './assets/logo_loeram_favicon.png'
 import { LSS_THEME_STORAGE_KEY, LSS_THEME_DARK, LSS_THEME_LIGHT } from './utils/themeStorage'
@@ -10,59 +11,16 @@ const apps = [
     name: 'Generador de DIOT',
     description: 'Genera archivo de carga masiva para la DIOT, en ambas versiones, 2024 y anteriores y 2025 en adelante',
     path: '/lss-diot/index.html',
-    icon: DiotIcon,
+    icon: FileUp,
   },
   {
     id: 'lss-cfdi-reader',
     name: 'Lector de CFDIs',
     description: 'Visualizador de CFDIs del SAT. Carga archivos XML, muestra la información en tabla y permite exportar a Excel.',
     path: '/lss-cfdi-reader/index.html',
-    icon: CfdiReaderIcon,
+    icon: FileCode,
   },
 ] as const
-
-function DiotIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-      <path d="M14 2v6h6" />
-      <path d="M8 13h2" />
-      <path d="M8 17h2" />
-      <path d="M12 13h4" />
-      <path d="M12 17h4" />
-    </svg>
-  )
-}
-
-function CfdiReaderIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-      <path d="M14 2v6h6" />
-      <path d="M16 13H8" />
-      <path d="M16 17H8" />
-      <path d="M10 9H8" />
-    </svg>
-  )
-}
 
 function App() {
   const [dark, setDark] = useState(() => {
