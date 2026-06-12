@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { FileCode, FileUp, Image, Search, Grid, FolderKanban } from 'lucide-react'
+import { FileCode, FileUp, Image, Search, Grid, FolderKanban, FileText } from 'lucide-react'
 import logoShort from './assets/logo_loeram_short.png'
 import logoFavicon from './assets/logo_loeram_favicon.png'
 import { LSS_THEME_STORAGE_KEY, LSS_THEME_DARK, LSS_THEME_LIGHT } from './utils/themeStorage'
@@ -28,6 +28,14 @@ const apps = [
     description: 'Optimiza tus imágenes reduciendo su peso y convirtiéndolas a JPG con total privacidad en lote.',
     path: '/lss-img-compressor/index.html',
     icon: Image,
+    category: 'Multimedia y Utilidades',
+  },
+  {
+    id: 'lss-pdf-compressor',
+    name: 'Compresor de PDFs',
+    description: 'Reduce el tamaño de tus archivos PDF optimizando imágenes, fuentes y metadatos.',
+    path: '/lss-pdf-compressor/index.html',
+    icon: FileText,
     category: 'Multimedia y Utilidades',
   },
 ] as const
