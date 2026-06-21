@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { FileCode, FileUp, Image, Search, Grid, FolderKanban, FileText } from 'lucide-react'
+import { FileCode, FileUp, Image, Search, Grid, FolderKanban, FileText, Lock } from 'lucide-react'
 import logoShort from './assets/logo_loeram_short.png'
 import logoFavicon from './assets/logo_loeram_favicon.png'
 import { LSS_THEME_STORAGE_KEY, LSS_THEME_DARK, LSS_THEME_LIGHT } from './utils/themeStorage'
@@ -36,6 +36,14 @@ const apps = [
     description: 'Reduce el tamaño de tus archivos PDF optimizando imágenes, fuentes y metadatos.',
     path: '/lss-pdf-compressor/index.html',
     icon: FileText,
+    category: 'Multimedia y Utilidades',
+  },
+  {
+    id: 'lss-password-gen',
+    name: 'Generador de Contraseñas',
+    description: 'Crea contraseñas seguras y aleatorias con opciones de personalización e indicador de nivel de seguridad local.',
+    path: '/lss-password-gen/index.html',
+    icon: Lock,
     category: 'Multimedia y Utilidades',
   },
 ] as const
